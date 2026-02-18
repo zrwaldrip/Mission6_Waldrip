@@ -10,7 +10,7 @@ using Mission06_Waldrip.Models;
 namespace Mission06_Waldrip.Migrations
 {
     [DbContext(typeof(NewMovieContext))]
-    [Migration("20260218071547_Initial")]
+    [Migration("20260218075502_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -33,15 +33,13 @@ namespace Mission06_Waldrip.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<bool>("Edited")
+                    b.Property<bool?>("Edited")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("LentTo")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Notes")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Rating")

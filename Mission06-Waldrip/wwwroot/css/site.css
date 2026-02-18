@@ -29,3 +29,76 @@ body {
 .form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
   text-align: start;
 }
+
+/* Custom styles for Mission 06 - Zach Waldrip */
+
+/* 1. General Layout Improvements */
+body {
+  background-color: #f8f9fa; /* Light grey background is easier on the eyes */
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+}
+
+/* 2. Form Styling (Add Movie Page) */
+.form-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+}
+
+input.form-control, select.form-select {
+  margin-bottom: 1rem;
+  border: 1px solid #ced4da;
+}
+
+input:focus, select:focus {
+  border-color: #002e5d; /* BYU Blue focus */
+  box-shadow: 0 0 0 0.2rem rgba(0, 46, 93, 0.25);
+}
+
+/* 3. Image Profile Card (Get to Know Joel Page) */
+.profile-card {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.profile-card img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.profile-card img:hover {
+  transform: scale(1.03);
+}
+
+.profile-btn-group {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+/* 4. Navigation & Footer */
+.navbar {
+  background-color: #002e5d !important; /* BYU Blue */
+  margin-bottom: 2rem;
+}
+
+.navbar-brand, .nav-link {
+  color: white !important;
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 1.5rem;
+  border-top: 1px solid #dee2e6;
+  color: #6c757d;
+}

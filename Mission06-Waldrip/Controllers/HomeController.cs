@@ -6,6 +6,11 @@ namespace Mission06_Waldrip.Controllers;
 
 public class HomeController : Controller
 {
+    private NewMovieContext _context;
+    public HomeController(NewMovieContext context)
+    {
+        _context = context;
+    }
     public IActionResult Index()
     {
         return View();
@@ -16,10 +21,24 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult Confirmation(NewMovie newMovie)
+    {
+        return View(newMovie);
+    }
+
     [HttpGet]
     public IActionResult AddMovie()
     {
         return View();
+    }
+
+    [HttpPost]
+    public IActionResult AddMovie(NewMovie newMovie)
+    {
+        _context.Movies.Add(newMovie);
+        _context.SaveChanges();
+        
+        return RedirectToAction("Confirmation", newMovie);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
