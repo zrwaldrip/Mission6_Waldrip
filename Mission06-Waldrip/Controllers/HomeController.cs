@@ -21,11 +21,6 @@ public class HomeController : Controller
         return View();
     }
 
-    public IActionResult Confirmation(NewMovie newMovie)
-    {
-        return View(newMovie);
-    }
-
     [HttpGet]
     public IActionResult AddMovie()
     {
@@ -38,7 +33,7 @@ public class HomeController : Controller
         _context.Movies.Add(newMovie);
         _context.SaveChanges();
         
-        return RedirectToAction("Confirmation", newMovie);
+        return View("Confirmation", newMovie);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
