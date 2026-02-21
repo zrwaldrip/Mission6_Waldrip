@@ -1,4 +1,4 @@
-﻿@model NewMovie
+﻿@model Movie
 
 @{
     ViewData["Title"] = "Add a Movie";
@@ -7,6 +7,8 @@
 <h3>Enter the information for a movie to submit it to the database!</h3>
 
 <form method="post">
+    <input type="hidden" asp-for="MovieId"></input>
+    
     <select asp-for="CategoryId">
         <option value="">Select Category</option>
         @foreach (Category x in ViewBag.Categories)

@@ -1,7 +1,7 @@
 @{
 }
 
-@model List<NewMovie>
+@model List<Movie>
 
 <table class="table table-bordered">
     <thead class="fw-bold">
@@ -19,7 +19,7 @@
     </thead>
     
     <tbody>
-    @foreach (NewMovie x in Model)
+    @foreach (Movie x in Model)
     {
         <tr>
             <td>@ViewBag.Categories[x.CategoryId - 1].CategoryName</td>

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Mission06_Waldrip.Models;
 
-public class NewMovie
+public class Movie
 {
     [Key]
     [Required]
