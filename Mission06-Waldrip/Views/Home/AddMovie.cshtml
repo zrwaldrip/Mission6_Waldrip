@@ -7,8 +7,14 @@
 <h3>Enter the information for a movie to submit it to the database!</h3>
 
 <form method="post">
-    <label asp-for="Category">Category</label>
-    <input asp-for="Category" required/>
+    <select asp-for="CategoryId">
+        <option value="">Select Category</option>
+        @foreach (Category x in ViewBag.Categories)
+        {
+            <option value="@x.CategoryId">@x.CategoryName</option>
+        }
+    </select>
+
     <br/>
     <label asp-for="Title">Title</label>
     <input asp-for="Title" required/>
@@ -36,9 +42,15 @@
     <label asp-for="LentTo">Lent To</label>
     <input asp-for="LentTo"/>
     <br/>
+    <label asp-for="CopiedToPlex">Copied to Plex?</label>
+    <select asp-for="CopiedToPlex">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+    <br/>
     <label asp-for="Notes">Notes</label>
     <input asp-for="Notes"/>
     <br/>
-    
+
     <button type="submit">Submit Movie</button>
 </form>
